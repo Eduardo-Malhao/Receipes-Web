@@ -17,7 +17,10 @@ RegisterValidation.validateFields,
 RegisterValidation.validateEmail,
 RegisterValidation.validateUsername,
 RegisterValidation.validatePassword,
-(req: Request, res: Response) => controller.register(req, res));
+(req: Request, res: Response) => {
+  res.json({msg: 'This is CORS-enabled for all origins!'})
+  controller.register(req, res)
+});
 
 router.post('/login',
 LoginValidation.validateFields,

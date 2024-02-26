@@ -14,7 +14,7 @@ class App {
 
   private config():void {
       const accessControl: express.RequestHandler = (_req, res, next) => {
-      res.header('Access-Control-Allow-Origin', '*');
+      res.header('Access-Control-Allow-Origin', 'https://recipes-web-vercel.vercel.app');
       res.header('Access-Control-Allow-Methods', 'GET,POST,DELETE,OPTIONS,PUT,PATCH');
       res.header('Access-Control-Allow-Headers', '*');
       next();
@@ -26,8 +26,7 @@ class App {
   private routes():void { this.app.use(router); }
 
   public start(PORT: string | number): void {
-    this.app.listen(PORT, () => console.log(`Running on port ${PORT}`));
-    console.log(supabase);
+    this.app.listen(PORT);
   }
 }
 
