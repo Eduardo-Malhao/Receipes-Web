@@ -27,7 +27,7 @@ function Register() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch('https://rtpoziwmyvjihhsfomym.supabase.co/auth/register', {
+      const response = await fetch('https://rtpoziwmyvjihhsfomym.supabase.co/rest/v1/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
