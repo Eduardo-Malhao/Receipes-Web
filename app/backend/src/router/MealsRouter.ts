@@ -7,5 +7,4 @@ const router = Router();
 
 router.get('/', (req: Request, res: Response) => controller.getMeals(req, res));
 
-
 export default router;

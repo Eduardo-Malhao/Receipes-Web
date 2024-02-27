@@ -1,13 +1,7 @@
-import express, { Request, Response, Router } from 'express';
-import cors from 'cors';
+import { Request, Response, Router } from 'express';
 import Controller from '../controller/UsersController';
 import LoginValidation from '../middlewares/LoginValidation';
 import RegisterValidation from '../middlewares/RegisterValidation';
-
-
-const app = express();
-
-app.use(cors());
 
 const router = Router();
 const controller = new Controller();
@@ -17,10 +11,7 @@ RegisterValidation.validateFields,
 RegisterValidation.validateEmail,
 RegisterValidation.validateUsername,
 RegisterValidation.validatePassword,
-(req: Request, res: Response) => {
-  res.json({msg: 'This is CORS-enabled for all origins!'})
-  controller.register(req, res)
-});
+(req: Request, res: Response) => controller.register(req, res));
 
 router.post('/login',
 LoginValidation.validateFields,
